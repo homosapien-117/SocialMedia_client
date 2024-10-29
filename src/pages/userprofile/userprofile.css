@@ -1,0 +1,305 @@
+
+.user-profile {
+  width: 300vh;
+  max-width: 1500px;
+  padding: 40px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 90px;
+  left: 190px;
+}
+
+
+.user-profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+.profile-userpicture {
+  max-height: 120px;
+  max-width: 120px;
+}
+
+.profile-information {
+  padding: -100px;
+}
+.user-profile h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+
+.user-profile p {
+  font-size: 1.2em;
+  color: #666;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.udetails {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.udetails div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.udetails a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.udetails .count {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.udetails .label {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px;
+}
+
+.userdetails {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.userdetails div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userdetails a {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.follow a {
+  color: #4a90e2;
+  border-color: #4a90e2;
+}
+
+.follow a:hover {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.block a {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+.block a:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.userdetails a:active {
+  transform: scale(0.98);
+}
+
+.private-account {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-content ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-content ul li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+
+.userposts {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.userpost {
+  width: 100vh;
+  height: 80vh;
+  max-width: 600px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  display: grid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.userpost img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; 
+  border-radius: 10px;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.userpost p {
+  margin-top: 15px;
+  font-size: 1em;
+  color: #333;
+  text-align: center;
+}
+
+.post-actions {
+  display: flex;
+ 
+  align-items: center;
+  margin-top: -10px;
+}
+
+.post-actions .MuiIconButton-root {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.post-actions .MuiIconButton-root:hover {
+  color: #4a90e2; 
+}
+
+.post-actions span {
+  margin-left: 5px;
+  font-size: 1em;
+  color: #666;
+}
+
+.comments-section {
+  margin-top: 20px;
+}
+
+.comments-section form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comments-section form .MuiTextField-root {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.comments-section form button {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comments-section form button:hover {
+  background-color: #357abd; 
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comments-list li {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.comments-list li strong {
+  color: #4a90e2;
+}
+
+.comments-list li span {
+  margin-left: 5px;
+}
+

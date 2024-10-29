@@ -1,0 +1,41 @@
+/* Custom Alert Box Style */
+.custom-alert {
+    background-color: #333333; /* Dark background */
+    color: #ffffff; /* White text */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px 20px; /* Custom padding */
+    font-family: 'Arial', sans-serif; /* Custom font */
+    font-size: 16px; /* Custom font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed; /* Fix the position */
+    top: 20px; /* Position from the top */
+    right: 20px; /* Position from the right */
+    z-index: 1000; /* Ensure it appears above other elements */
+    max-width: 300px; /* Max width */
+    animation: slideIn 0.5s ease-out; /* Animation effect */
+  }
+  
+  /* Animation for alert box */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Custom close button */
+  .custom-alert .close-btn {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+  

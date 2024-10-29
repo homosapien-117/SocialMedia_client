@@ -1,0 +1,102 @@
+body,
+
+
+.Home-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  
+}
+
+.Home-container .Navbar {
+  height: 60px;
+  width: 100%;
+  background-color: #5271ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Home-container .content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.Home-container .content .Sidebar {
+  width: 250px;
+  height: calc(100vh - 60px);
+  background-color: #333;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.Home-container .content .main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  background-color: #f4f4f9;
+}
+
+
+.user-posts {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -10px;
+  
+
+}
+
+
+.post p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.post img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post .post-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #888;
+}
+
+.loading,
+.no-posts {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .main-content{
+    margin-left: 30px;
+  }
+}
