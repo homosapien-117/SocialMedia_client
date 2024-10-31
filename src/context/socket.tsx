@@ -2,7 +2,6 @@ import { io, Socket } from "socket.io-client";
 import { createContext, useState, useEffect } from "react";
 import CustomAlert from "../components/alert/alert";
 
-
 interface SocketContextProps {
   children: React.ReactNode;
 }
@@ -16,38 +15,34 @@ const SocketContext = createContext<SocketContextValue>({
 });
 
 const SocketProvider = ({ children }: SocketContextProps) => {
- 
-  const userdata = JSON.parse (localStorage.getItem("user_data") || "{}");
+  const userdata = JSON.parse(localStorage.getItem("user_data") || "{}");
 
   const [socket, setSocket] = useState<Socket | null>(null);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    const socketInstance = io("http://localhost:4000"); //https://civic-server.onrender.com
+    const socketInstance = io("https://civic-server.onrender.com"); //http://localhost:4000 
     setSocket(socketInstance);
 
-    if(userdata && userdata?.user?._id){
-      socketInstance.emit("register",userdata?.user?._id)
+    if (userdata && userdata?.user?._id) {
+      socketInstance.emit("register", userdata?.user?._id);
     }
 
-    socketInstance.on("connected",()=>{
+    socketInstance.on("connected", () => {
       console.log("user Connected the room");
-      
-    })
-    socketInstance.on("new notification",(notification)=>{
-      console.log("Notification received:",notification);
-    
-    })
+    });
+    socketInstance.on("new notification", (notification) => {
+      console.log("Notification received:", notification);
+    });
 
-    socketInstance.on("new comment",(notification)=>{
-      console.log("Comment received:",notification);
-      alert("notification send")
-    })
+    socketInstance.on("new comment", (notification) => {
+      console.log("Comment received:", notification);
+      alert("notification send");
+    });
 
     socketInstance.on("receiveMessage", (message) => {
       console.log("Message received:", message);
       setAlertMessage(`New message from ${message.senderName}`);
-
     });
 
     return () => {
@@ -69,5 +64,3 @@ const SocketProvider = ({ children }: SocketContextProps) => {
 };
 
 export { SocketContext, SocketProvider };
-
-

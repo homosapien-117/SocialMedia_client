@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import {Axios} from "../../axios";
+import { Axios } from "../../axios";
 import Navbar from "../../components/navbar/navbar";
 import Sidebar from "../../components/sidebar/sidebar";
 import {
@@ -16,10 +16,10 @@ import {
 import { SocketContext } from "../../context/socket";
 import { NotificationInterface } from "../../Interfaces/notificationInterface";
 
-
-
 const NotificationPage: React.FC = () => {
-  const [notifications, setNotifications] = useState<NotificationInterface[]>([]);
+  const [notifications, setNotifications] = useState<NotificationInterface[]>(
+    []
+  );
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const { socket } = useContext(SocketContext);
@@ -36,7 +36,6 @@ const NotificationPage: React.FC = () => {
         }
         setLoading(false);
       } catch (error) {
-        setError("Error fetching notifications.");
         setLoading(false);
       }
     };
@@ -61,7 +60,9 @@ const NotificationPage: React.FC = () => {
 
   const handleApproveFollow = async (notificationId: string) => {
     try {
-      const response = await Axios.post(`/auth/approve-follow/${notificationId}`);
+      const response = await Axios.post(
+        `/auth/approve-follow/${notificationId}`
+      );
       if (response.data === "User deleted the follow request") {
         alert("Request canceled by the user");
         setNotifications(notifications.filter((n) => n._id !== notificationId));
@@ -92,7 +93,6 @@ const NotificationPage: React.FC = () => {
         <Navbar />
       </Grid>
       <Grid item xs={12} md={2} sx={{ display: { md: "block" } }}>
-        {/* Hide the Sidebar on small screens */}
         <Sidebar />
       </Grid>
       <Grid item xs={12} md={10} sx={{ padding: { xs: 2, md: 5 } }}>
@@ -102,7 +102,12 @@ const NotificationPage: React.FC = () => {
           </Typography>
         )}
         {notifications.length === 0 ? (
-          <Box display="flex" justifyContent="center" alignItems="center" sx={{ height: "100%" }}>
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ height: "100%" }}
+          >
             <Typography variant="h5" color="textSecondary">
               No notifications.
             </Typography>
@@ -116,8 +121,8 @@ const NotificationPage: React.FC = () => {
                   display: "flex",
                   alignItems: "center",
                   borderBottom: "1px solid #ddd",
-                  padding: { xs: "10px", sm: "15px" }, // Smaller padding for phones
-                  flexDirection: { xs: "column", sm: "row" }, // Responsive direction
+                  padding: { xs: "10px", sm: "15px" },
+                  flexDirection: { xs: "column", sm: "row" },
                   "&:hover": {
                     backgroundColor: "#f1f1f1",
                   },
@@ -126,7 +131,7 @@ const NotificationPage: React.FC = () => {
                 <Avatar
                   sx={{
                     marginRight: { xs: 0, sm: "15px" },
-                    marginBottom: { xs: "10px", sm: 0 }, // Responsive margin
+                    marginBottom: { xs: "10px", sm: 0 },
                     backgroundColor: "#007bff",
                     color: "#ffffff",
                     width: { xs: 40, sm: 45 },
@@ -160,7 +165,9 @@ const NotificationPage: React.FC = () => {
                           <Button
                             variant="contained"
                             color="primary"
-                            onClick={() => handleApproveFollow(notification._id)}
+                            onClick={() =>
+                              handleApproveFollow(notification._id)
+                            }
                             sx={{ marginRight: 2, textTransform: "none" }}
                           >
                             Approve
@@ -168,7 +175,9 @@ const NotificationPage: React.FC = () => {
                           <Button
                             variant="contained"
                             color="secondary"
-                            onClick={() => handleDeclineFollow(notification._id)}
+                            onClick={() =>
+                              handleDeclineFollow(notification._id)
+                            }
                             sx={{ textTransform: "none" }}
                           >
                             Decline

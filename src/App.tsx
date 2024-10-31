@@ -4,7 +4,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import { ReactNode, Suspense } from "react";
+import { ReactNode, Suspense} from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Authprovider, useAuth } from "./context/AuthContext";
 import { AdminAuthProvider, useAdminAuth } from "./context/AdminAuthContext";
@@ -30,10 +30,10 @@ import Loading from "./components/loading/loading";
 const queryClient = new QueryClient();
 
 function App() {
-  //  const { logout } = useAuth();
+  // const { logout } = useAuth();
   // useEffect(() => {
   //   setupAxiosInterceptors(logout);
-  // }, [logout])
+  // }, [logout]);
   return (
     <Suspense fallback={<Loading loading={true} />}>
       <SocketProvider>

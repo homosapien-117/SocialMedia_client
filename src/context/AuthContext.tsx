@@ -1,10 +1,9 @@
+import { createContext, useContext, useEffect, useState } from "react";
 import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
-import { AuthContextType, AuthProviderProps} from "../Interfaces/authInterface";
+  AuthContextType,
+  AuthProviderProps,
+} from "../Interfaces/authInterface";
+import { Axios } from "../axios";
 
 const Authcontext = createContext<AuthContextType>({
   token: null,
@@ -20,7 +19,6 @@ const Authcontext = createContext<AuthContextType>({
   },
 });
 
-
 export const Authprovider = ({ children }: AuthProviderProps) => {
   const [token, setToken] = useState<string | null>(null);
   const [userdata, setUserdata] = useState<any | null>(null);
@@ -32,6 +30,7 @@ export const Authprovider = ({ children }: AuthProviderProps) => {
       setIsAuthenticated(true);
       setToken(storedData.userToken);
       setUserdata(storedData.user);
+      Axios.defaults.headers.common["Authorization"] = storedData.userToken;
     }
   }, []);
 
@@ -43,6 +42,7 @@ export const Authprovider = ({ children }: AuthProviderProps) => {
     setToken(newToken);
     setUserdata(newData);
     setIsAuthenticated(true);
+    Axios.defaults.headers.common["Authorization"] = newToken;
   };
 
   const logout = () => {
@@ -60,7 +60,15 @@ export const Authprovider = ({ children }: AuthProviderProps) => {
 
   return (
     <Authcontext.Provider
-      value={{ token, isAuthenticated, userdata, login, logout, config, setUserdata }}
+      value={{
+        token,
+        isAuthenticated,
+        userdata,
+        login,
+        logout,
+        config,
+        setUserdata,
+      }}
     >
       {children}
     </Authcontext.Provider>
@@ -72,6 +80,6 @@ export const useAuth = () => {
   if (context === undefined) {
     throw new Error("useAuth must be used within an Authprovider");
   }
-  
+
   return context;
 };

@@ -5,9 +5,8 @@ console.log(token);
 
 const admintoken = JSON.parse(localStorage.getItem("admin_data") as string);
 console.log(admintoken);
-
 const Axios: AxiosInstance = axios.create({
-  baseURL: "http://localhost:4000/api/", // https://civic-server.onrender.com/api/
+  baseURL: "https://civic-server.onrender.com/api/",  //http://localhost:4000/api/ 
   headers: { "Content-Type": "application/json" },
   withCredentials: false,
 });
