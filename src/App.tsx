@@ -4,11 +4,10 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import { ReactNode, Suspense} from "react";
+import { ReactNode, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Authprovider, useAuth } from "./context/AuthContext";
 import { AdminAuthProvider, useAdminAuth } from "./context/AdminAuthContext";
-// import Sidebar from "./components/adminsidebar/adminSidebar";
 import Login from "./pages/login/login";
 import Home from "./pages/home/home";
 import ResetPassword from "./pages/resetpassword/resetpassword";
@@ -25,15 +24,10 @@ import NotFound from "./pages/error/error";
 import Chat from "./pages/chat/chat";
 import { SocketProvider } from "./context/socket";
 import Dashboard from "./admin/AdminDashboard/admindashboard";
-// import { setupAxiosInterceptors } from "./axios";
 import Loading from "./components/loading/loading";
 const queryClient = new QueryClient();
 
 function App() {
-  // const { logout } = useAuth();
-  // useEffect(() => {
-  //   setupAxiosInterceptors(logout);
-  // }, [logout]);
   return (
     <Suspense fallback={<Loading loading={true} />}>
       <SocketProvider>
@@ -196,15 +190,11 @@ function AdminRoutes() {
 function AuthRoute({ children }: { children: ReactNode }) {
   const { isAuthenticated } = useAuth();
   console.log("AuthRoute check:", isAuthenticated);
-  // const storedData = JSON.parse(localStorage.getItem("user_data") || "{}");
-
-  // const location = useLocation()
   return isAuthenticated ? <Navigate to="/home" /> : children;
 }
 
 function ProtectedRoute({ children }: { children: ReactNode }) {
   const { isAuthenticated } = useAuth();
-  // console.log("ProtectedRoute check:", isAuthenticated);
   const storedData = JSON.parse(localStorage.getItem("user_data") || "{}");
 
   return storedData.userToken || isAuthenticated ? (
