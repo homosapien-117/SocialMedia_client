@@ -6,7 +6,7 @@ console.log(token);
 const admintoken = JSON.parse(localStorage.getItem("admin_data") as string);
 console.log(admintoken);
 const Axios: AxiosInstance = axios.create({
-  baseURL: "https://socialmedia-server-zflk.onrender.com",  //http://localhost:4000/api/
+  baseURL: "https://socialmedia-server-zflk.onrender.com/api",  //http://localhost:4000/api/
   headers: { "Content-Type": "application/json" },
   withCredentials: false,
 });
