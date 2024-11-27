@@ -21,7 +21,7 @@ const SocketProvider = ({ children }: SocketContextProps) => {
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    const socketInstance = io("http://localhost:4000"); //
+    const socketInstance = io("https://socialmedia-server-zflk.onrender.com"); //http://localhost:4000
     setSocket(socketInstance);
 
     if (userdata && userdata?.user?._id) {

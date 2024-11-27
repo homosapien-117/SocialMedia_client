@@ -6,7 +6,7 @@ console.log(token);
 const admintoken = JSON.parse(localStorage.getItem("admin_data") as string);
 console.log(admintoken);
 const Axios: AxiosInstance = axios.create({
-  baseURL: "http://localhost:4000/api/",  // 
+  baseURL: "https://socialmedia-server-zflk.onrender.com",  //http://localhost:4000/api/
   headers: { "Content-Type": "application/json" },
   withCredentials: false,
 });
@@ -16,7 +16,7 @@ axios.defaults.headers.post["Content-Type"] =
 // Axios.defaults.headers.common["Authorization"] = token?.userToken;
 
 const AdminAxios: AxiosInstance = axios.create({
-  baseURL: "http://localhost:4000/api/",
+  baseURL: "https://socialmedia-server-zflk.onrender.com", //http://localhost:4000/api/
   headers: { "Content-Type": "application/json" },
   withCredentials: false,
 });
