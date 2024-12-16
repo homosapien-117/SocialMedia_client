@@ -19,7 +19,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
-import {Axios} from "../../axios";
+import { Axios } from "../../axios";
 import { AxiosResponse } from "axios";
 import Navbar from "../../components/navbar/navbar";
 import Sidebar from "../../components/sidebar/sidebar";
@@ -261,7 +261,7 @@ const UserProfile: React.FC = () => {
           flexDirection: "column",
           marginTop: -40,
           position: "absolute",
-          left:0
+          left: -10,
         }}
       >
         <Grid
@@ -281,14 +281,14 @@ const UserProfile: React.FC = () => {
               ? 9
               : isTabScreen
               ? 20
-              : 75,
+              : 65,
             marginTop: isExtraSmallScreen
               ? 10
               : isSmallScreen
               ? -5
               : isTabScreen
               ? -20
-              : 0,
+              : 10,
           }}
         >
           <Paper elevation={3} style={{ padding: "40px" }}>
