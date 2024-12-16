@@ -51,7 +51,7 @@ const Sidebar = () => {
         top: "60px",
         left: 0,
         height: "calc(100% - 60px)",
-        backgroundColor: "#2d3250",
+        backgroundColor: "#00305f",
         color: "white",
         paddingTop: "80px",
         zIndex: 2,

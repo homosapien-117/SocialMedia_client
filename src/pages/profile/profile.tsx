@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { faEdit, faCamera } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {Axios} from "../../axios";
+import { Axios } from "../../axios";
 import EditProfileForm from "../../components/editprofile/editprofile";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -24,8 +24,6 @@ import Post from "../post/post";
 import Navbar from "../../components/navbar/navbar";
 import Sidebar from "../../components/sidebar/sidebar";
 import { useAuth } from "../../context/AuthContext";
-
-// import { auto } from "@cloudinary/url-gen/actions/resize";
 
 const ProfilePicture: React.FC = () => {
   const [img, setImg] = useState<string | null>(null);
