@@ -221,7 +221,7 @@ const Login = () => {
               Sign In
             </button>
           </div>
-          <div className="toggle-panel toggle-right">
+          <div className="toggle-panel toggle-right" >
             <h1>Hello, Friend!</h1>
             <p>Register with your personal details to use all site features</p>
             <button
