@@ -23,13 +23,6 @@ const Login = () => {
     password: "",
     confirmpassword: "",
   });
-
-  useEffect(() => {
-    document.body.classList.add("gradient-bg");
-    return () => {
-      document.body.classList.remove("gradient-bg");
-    };
-  }, []);
   useEffect(() => {
     if (location.pathname === "/signup") {
       setIsSignIn(false);
