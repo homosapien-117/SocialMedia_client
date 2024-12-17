@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 const Navbar = () => {
   const { userdata } = useAuth();
   return (
-    <AppBar position="fixed" sx={{backgroundColor: "#00305f", zIndex: 2 }}>
+    <AppBar position="fixed" sx={{backgroundColor: "#2d2e5f", zIndex: 2 }}>
       <Toolbar sx={{ justifyContent: "flex-end", height: "60px" }}>
         <div className="profile" style={{ display: "flex", alignItems: "center" }}>
           <Avatar

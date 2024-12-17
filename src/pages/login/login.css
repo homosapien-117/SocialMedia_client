@@ -8,14 +8,20 @@
   left:0;
 }
 
-body {
-  /* background: linear-gradient(to bottom, rgb(36, 9, 119), rgb(72, 7, 149), rgb(109, 5, 178), rgb(145, 2, 208)); */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
+body.gradient-bg {
+  background: linear-gradient(to right, #7387C6, #B3BDEE, #A19E9F);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
+
+
+body {
+  background-color: #fff; 
+  margin: 0;
+  padding: 0;
+}
+
 
 .container {
   background: #fff;
@@ -165,22 +171,8 @@ body {
 }
 
 .toggle {
-  background-color: #13d420;
+  background-color: #2d2e5f;
   height: 100%;
-  background: radial-gradient(
-    circle at top right,
-    rgb(20, 50, 93) 0%,
-    rgb(20, 50, 93) 48%,
-    rgb(30, 75, 120) 48%,
-    rgb(30, 75, 120) 53%,
-    rgb(50, 100, 150) 53%,
-    rgb(50, 100, 150) 56%,
-    rgb(80, 130, 180) 56%,
-    rgb(80, 130, 180) 69%,
-    rgb(100, 160, 210) 69%,
-    rgb(100, 160, 210) 100%
-  );
-  
   color: #fff;
   position: relative;
   left: -100%;
