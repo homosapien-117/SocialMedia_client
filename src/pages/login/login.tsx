@@ -200,9 +200,8 @@ const Login = () => {
               required
             />
             <button type="submit" disabled={loginLoading ?? undefined}>
-              {loginLoading ? "Logging In..." : "Login"}
+              {loginLoading ? "Signing Up" : "Sign Up"}
             </button>
-
             {signUpError && <p className="error-message">{signUpError}</p>}
           </form>
         </div>
@@ -221,7 +220,7 @@ const Login = () => {
               Sign In
             </button>
           </div>
-          <div className="toggle-panel toggle-right" >
+          <div className="toggle-panel toggle-right">
             <h1>Hello, Friend!</h1>
             <p>Register with your personal details to use all site features</p>
             <button
